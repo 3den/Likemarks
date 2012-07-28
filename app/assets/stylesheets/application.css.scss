@@ -1,0 +1,17 @@
+$navbarBackground: #3B5998;
+$navbarBackgroundHighlight: #3B5998;
+$navbarText: #FFF;
+$navbarBrandColor: #FFF;
+$navbarLinkColor: #FFF;
+$navbarLinkBackgroundHover: #263B68;
+$navbarSearchPlaceholderColor: #FFF;
+
+@import "bootstrap";
+
+body {
+  padding-top: 60px;
+}
+
+.navbar .brand {
+  font-weight: bold;
+}

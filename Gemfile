@@ -2,13 +2,12 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.7'
 
-group :production do
-  gem 'pg'
-end
+gem 'pg'
+gem 'texticle', '~> 2.0', :require => 'texticle/rails'
 
 group :development, :test do
-  gem 'sqlite3'
   gem "rspec-rails"
+  gem "pry-rails"
 end
 
 group :assets do

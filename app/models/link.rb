@@ -2,6 +2,7 @@ class Link < ActiveRecord::Base
   has_and_belongs_to_many :users
   attr_accessible :created_time, :fid, :icon, :link, :message, :name, :picture
   validates :link, uniqueness: true
+  default_scope order("rank DESC")
 
   def self.import_links_from(user)
     transaction do

@@ -17,6 +17,7 @@ class User < ActiveRecord::Base
   end
 
   # Get all non-facebook links shared by the user
+  #u.facebook.fql_query 'SELECT picture, url, title, image_urls, created_time FROM link WHERE owner=me() AND "facebook" IN link.url'
   def fb_links
     links = facebook.get_connection("me", "links")
     links.select do |link|
@@ -28,7 +29,6 @@ class User < ActiveRecord::Base
     links.find_by_link(link).present?
   end
 
-  private
   def facebook
     @facebook ||= Koala::Facebook::API.new(oauth_token)
     block_given? ? yield(@facebook) : @facebook

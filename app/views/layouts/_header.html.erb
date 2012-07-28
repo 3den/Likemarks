@@ -1,0 +1,29 @@
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="#">likebook</a>
+      <div class="nav-collapse">
+        <%= form_tag searches_path, method: "get", class: "navbar-search pull-left" do %>
+          <%= search_field_tag "q", params[:q], class: "search-query span5", placeholder: "search" %>
+        <% end %>
+        <ul class="nav pull-right">
+          <% if current_user %>
+            <li>
+              <%= link_to "My Links", search_path(current_user), id: 'load-links' %>
+            </li>
+            <li class="divider-vertical"></li>
+            <li>
+              <%= link_to "Sign out", signout_path, id: "fb-logout" %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to "Sign in with Facebook", "/auth/facebook",
+                id: "fb-login" %>
+            </li>
+          <% end %>
+        </ul>
+      </div><!-- /.nav-collapse -->
+    </div>
+  </div><!-- /navbar-inner -->
+</div>
+
