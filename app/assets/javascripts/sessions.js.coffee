@@ -1,3 +1,10 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
+window.fbAsyncInit = ->
+  FB.init
+    appId: FACEBOOK_APP_ID
+    status: true
+    cookie: true
+    xfbml: true
+
+$ ->
+  $('body').prepend('<div id="fb-root"></div>')
+  $.getScript "#{document.location.protocol}//connect.facebook.net/en_US/all.js"
