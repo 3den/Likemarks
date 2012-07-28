@@ -11,7 +11,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120728044122) do
+ActiveRecord::Schema.define(:version => 20120728171239) do
+
+  create_table "links", :force => true do |t|
+    t.text     "message"
+    t.string   "picture"
+    t.string   "link"
+    t.string   "name"
+    t.string   "icon"
+    t.datetime "created_time"
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+    t.integer  "rank",         :default => 0, :null => false
+  end
+
+  add_index "links", ["link"], :name => "index_links_on_link", :unique => true
+  add_index "links", ["rank"], :name => "index_links_on_rank"
+
+  create_table "links_users", :force => true do |t|
+    t.integer "link_id"
+    t.integer "user_id"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "provider"

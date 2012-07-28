@@ -8,6 +8,7 @@ end
 
 group :development, :test do
   gem 'sqlite3'
+  gem "rspec-rails"
 end
 
 group :assets do
@@ -22,4 +23,5 @@ end
 
 gem 'heroku'
 gem 'omniauth-facebook'
+gem 'koala'
 gem 'jquery-rails'
