@@ -1,3 +1,24 @@
-// Place all the styles related to the searches controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#search-results {
+  .result {
+    margin: 0 0 9px;
+    p {
+      margin: 0;
+      a {
+        text-decoration: none;
+        color: #029E40;
+      }
+    }
+
+    img.link-picture {
+      max-height: 50px!important;
+      margin: 5px 0;
+    }
+
+    h3 a {
+      font-weight: normal;
+      text-decoration: underline;
+      font-size: 1.1em;
+    }
+  }
+}
+
