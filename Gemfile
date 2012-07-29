@@ -21,3 +21,4 @@ gem 'omniauth-facebook'
 gem 'koala'
 gem 'jquery-rails'
 gem "bootstrap-sass"
+gem 'kaminari'

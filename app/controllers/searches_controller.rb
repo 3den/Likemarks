@@ -7,7 +7,10 @@ class SearchesController < ApplicationController
     user = User.find_by_username(username) if username.present?
     scope =  user.present? ? user.links : Link
 
-    @results = query.present? ? scope.search(query) : scope.limit(20)
+    @results = query.present? ?
+      scope.search(query).page(params[:page]) :
+      scope.page(params[:page])
+
     respond_with @results
   end
 
@@ -15,7 +18,7 @@ class SearchesController < ApplicationController
     @user = User.find(params[:id])
     params[:q] = "@#{@user.username}"
     Link.import_links_from @user
-    @results = @user.links
+    @results = @user.links.page(params[:page])
 
     respond_with @results
   end
