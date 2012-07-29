@@ -23,7 +23,8 @@ class User < ActiveRecord::Base
   # fql_query 'SELECT picture, url, title, image_urls, created_time
   # FROM link WHERE owner=me() AND "facebook" IN link.url'
   def fb_links(limit)
-    facebook.get_connection("me", "links?limit=#{limit}").select do |link|
+    links = facebook.get_connection("me", "links?limit=#{limit}")
+    links.select do |link|
       not link["link"].include? "facebook.com"
     end
   end

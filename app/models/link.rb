@@ -9,7 +9,7 @@ class Link < ActiveRecord::Base
     tsearch: {prefix: true, dictionary: "simple"}
   }
 
-  def self.import_links_from(user, limit=10)
+  def self.import_links_from(user, limit=20)
     transaction do
       user.fb_links(limit).each do |data|
         link = data["link"]
