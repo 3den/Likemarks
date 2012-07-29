@@ -18,8 +18,8 @@ class Link < ActiveRecord::Base
         link_object = Link.find_or_initialize_by_link(link)
         if link_object.new_record?
           link_object.message = data["message"]
-          link_object.name = data["name"][0...255]
-          link_object.picture = data["picture"][0...255]
+          link_object.name = data["name"][0...255] rescue nil
+          link_object.picture = data["picture"][0...255] rescue nil
           link_object.created_time = data["created_time"].to_time
           link_object.rank = 1
         else
