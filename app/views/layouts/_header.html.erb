@@ -1,15 +1,16 @@
 <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
-      <a class="brand" href="#">likebook</a>
+      <%= link_to "likebook", root_path, class: "brand" %>
       <div class="nav-collapse">
-        <%= form_tag searches_path, method: "get", class: "navbar-search pull-left" do %>
+        <%= form_tag root_path, method: "get", class: "navbar-search pull-left" do %>
           <%= search_field_tag "q", params[:q], class: "search-query span5", placeholder: "search" %>
         <% end %>
         <ul class="nav pull-right">
           <% if current_user %>
             <li>
-              <%= link_to "My Links", search_path(current_user), id: 'load-links' %>
+              <%= link_to "My Links", user_path(current_user),
+                id: 'load-links' %>
             </li>
             <li class="divider-vertical"></li>
             <li>

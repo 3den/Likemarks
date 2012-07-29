@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  USERNAME_REGEX = /\@\w+/
   has_and_belongs_to_many :links
   attr_accessible :name, :oauth_expires_at, :oauth_token, :provider, :uid
 
@@ -10,6 +11,8 @@ class User < ActiveRecord::Base
       user.provider = auth.provider
       user.uid = auth.uid
       user.name = auth.info.name
+      user.username = auth.info.nickname
+      user.picture = auth.info.image
       user.oauth_token = auth.credentials.token
       user.oauth_expires_at = Time.at(auth.credentials.expires_at)
       user.save!
@@ -20,7 +23,7 @@ class User < ActiveRecord::Base
   # fql_query 'SELECT picture, url, title, image_urls, created_time
   # FROM link WHERE owner=me() AND "facebook" IN link.url'
   def fb_links(limit=50)
-    facebook.get_connection("me", "links?limit=#{50}").select do |link|
+    facebook.get_connection("me", "links?limit=#{limit}").select do |link|
       not link["link"].include? "facebook.com"
     end
   end

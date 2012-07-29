@@ -8,3 +8,4 @@ window.fbAsyncInit = ->
 $ ->
   $('body').prepend('<div id="fb-root"></div>')
   $.getScript "#{document.location.protocol}//connect.facebook.net/en_US/all.js"
+

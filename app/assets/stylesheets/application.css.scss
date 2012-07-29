@@ -5,6 +5,8 @@ $navbarBrandColor: #FFF;
 $navbarLinkColor: #FFF;
 $navbarLinkBackgroundHover: #263B68;
 $navbarSearchPlaceholderColor: #FFF;
+$baseFontFamily: 'lucida grande',tahoma,verdana,arial,sans-serif;
+$sansFontFamily: $baseFontFamily;
 
 @import "bootstrap";
 @import "searches";
@@ -15,4 +17,9 @@ body {
 
 .navbar .brand {
   font-weight: bold;
+}
+
+footer.form-actions {
+  text-align: center;
+  margin: 10px 0 0 0!important;
 }

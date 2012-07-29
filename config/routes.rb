@@ -6,6 +6,7 @@ Likemarks::Application.routes.draw do
   resources :import, only: [:create]
   resources :searches, only: [:show, :index]
 
+  get "user/:id" => "searches#show", as: 'user'
   get "pages/terms"
   get "pages/home"
 

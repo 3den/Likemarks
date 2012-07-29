@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120728224533) do
+ActiveRecord::Schema.define(:version => 20120729034806) do
 
   create_table "links", :force => true do |t|
     t.text     "message"
@@ -41,6 +41,10 @@ ActiveRecord::Schema.define(:version => 20120728224533) do
     t.datetime "oauth_expires_at"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+    t.string   "username"
+    t.string   "picture"
   end
+
+  add_index "users", ["username"], :name => "index_users_on_username"
 
 end
