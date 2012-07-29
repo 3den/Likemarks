@@ -1,3 +1,4 @@
-<div class="span12" id="search-results">
+<% set_title params[:q] %>
+<div id="search-results">
   <%= render partial: "result", collection: @results %>
 </div>
