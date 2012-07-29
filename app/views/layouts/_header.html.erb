@@ -3,7 +3,7 @@
     <div class="container">
       <%= link_to "likebook", root_path, class: "brand" %>
       <div class="nav-collapse">
-        <%= form_tag root_path, method: "get", class: "navbar-search pull-left" do %>
+        <%= form_tag search_path, method: "get", class: "navbar-search pull-left" do %>
           <%= search_field_tag "q", params[:q], class: "search-query span5", placeholder: "search" %>
         <% end %>
         <ul class="nav pull-right">

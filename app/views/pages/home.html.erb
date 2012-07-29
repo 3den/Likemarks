@@ -1,2 +1,14 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<% unless current_user %>
+<div class="hero-unit">
+  <h1>Share what you like!</h1>
+  <p>Com <b>likemarks</b> você pode encontrar facilmente os links compartilhados por você e seus amigos no <b>facebook</b>.</p>
+
+  <p>
+    <%= link_to "Login with Facebook!", "/auth/facebook", class: "btn btn-primary btn-large" %>
+  </p>
+</div>
+<% end %>
+
+<div id="search-results">
+  <%= render partial: "searches/result", collection: @results %>
+</div>

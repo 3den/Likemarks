@@ -7,7 +7,8 @@ Likemarks::Application.routes.draw do
   resources :searches, only: [:show, :index]
 
   get "user/:id" => "searches#show", as: 'user'
+  get "search" => "searches#index", as: 'search'
   get "terms" => "pages#terms"
 
-  root :to => 'searches#index'
+  root :to => "pages#home"
 end

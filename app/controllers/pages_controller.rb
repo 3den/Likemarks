@@ -3,5 +3,6 @@ class PagesController < ApplicationController
   end
 
   def home
+    @results = Link.limit(10)
   end
 end
