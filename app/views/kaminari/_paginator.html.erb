@@ -9,15 +9,21 @@
 <%= paginator.render do -%>
   <div class="pagination pagination-centered">
     <ul>
-      <li><%= prev_page_tag %></li>
+      <% unless current_page.first? %>
+        <li><%= prev_page_tag %></li>
+      <% end %>
+
       <% each_page do |page| -%>
-        <% if page.left_outer? || page.right_outer? || page.inside_window? -%>
+        <% if page.left_outer? or page.right_outer? -%>
           <li class="<%= "active" if page.current? %>"><%= page_tag page %></li>
         <% elsif !page.was_truncated? -%>
           <li><%= gap_tag %></li>
         <% end -%>
       <% end -%>
-      <li><%= next_page_tag %></li>
+
+      <% unless current_page.last? %>
+        <li><%= next_page_tag %></li>
+      <% end %>
     <ul>
   </div>
 <% end -%>
