@@ -4,9 +4,9 @@ class Link < ActiveRecord::Base
   validates :link, uniqueness: true
   default_scope order("rank DESC")
 
-  def self.import_links_from(user)
+  def self.import_links_from(user, limit=25)
     transaction do
-      user.fb_links.each do |data|
+      user.fb_links(limit).each do |data|
         link = data["link"]
         next if user.has_link? link
 

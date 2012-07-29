@@ -17,11 +17,11 @@ class User < ActiveRecord::Base
   end
 
   # Get all non-facebook links shared by the user
-  #u.facebook.fql_query 'SELECT picture, url, title, image_urls, created_time FROM link WHERE owner=me() AND "facebook" IN link.url'
-  def fb_links
-    links = facebook.get_connection("me", "links")
-    links.select do |link|
-      not link["link"].include? "facebook"
+  # fql_query 'SELECT picture, url, title, image_urls, created_time
+  # FROM link WHERE owner=me() AND "facebook" IN link.url'
+  def fb_links(limit=50)
+    facebook.get_connection("me", "links?limit=#{50}").select do |link|
+      not link["link"].include? "facebook.com"
     end
   end
 
