@@ -1,8 +1,16 @@
 #search-results {
   .result {
     margin-bottom: 9px;
-    p {
-      margin: 0;
+    div { overflow-x: hidden; }
+
+    p { margin: 0; }
+    p.link-url {
+      a {
+        text-decoration: none;
+        color: #029E40;
+      }
+    }
+    p.link-users {
       a {
         text-decoration: none;
         color: #029E40;
