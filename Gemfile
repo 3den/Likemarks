@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.7'
 
 gem 'pg'
-gem 'texticle', '~> 2.0', :require => 'texticle/rails'
+gem 'pg_search'
 
 group :development, :test do
   gem "rspec-rails"

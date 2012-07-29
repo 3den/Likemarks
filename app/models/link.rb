@@ -1,8 +1,12 @@
 class Link < ActiveRecord::Base
+  include PgSearch
   has_and_belongs_to_many :users
   attr_accessible :created_time, :fid, :icon, :link, :message, :name, :picture
   validates :link, uniqueness: true
   default_scope order("rank DESC, created_time DESC")
+  pg_search_scope :search, against: [:link, :name, :message], using: {
+    tsearch: {prefix: true, dictionary: "simple"}
+  }
 
   def self.import_links_from(user, limit=25)
     transaction do
