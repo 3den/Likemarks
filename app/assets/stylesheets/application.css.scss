@@ -8,6 +8,7 @@ $navbarSearchPlaceholderColor: #FFF;
 $baseFontFamily: 'lucida grande',tahoma,verdana,arial,sans-serif;
 $sansFontFamily: $baseFontFamily;
 
+
 @import "bootstrap";
 @import "searches";
 
@@ -19,10 +20,316 @@ body {
   font-weight: bold;
 }
 
-footer.form-actions {
+footer.well {
   text-align: center;
-  margin: 10px 0 0 0!important;
+  margin: 10px -20px 0 -20px;
   a {
     color: #029E40;
+  }
+}
+
+@import "bootstrap-responsive";
+@media (min-width: 1200px) {
+  /* line 542, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  .row {
+    margin-left: -20px;
+    *zoom: 1;
+  }
+  /* line 15, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  .row:before, .row:after {
+    display: table;
+    content: "";
+  }
+  /* line 19, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  .row:after {
+    clear: both;
+  }
+
+  /* line 547, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  [class*="span"] {
+    float: left;
+    margin-left: 20px;
+  }
+
+  /* line 553, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
+    width: 724px;
+  }
+
+  /* line 560, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  .span1 {
+    width: 42px;
+  }
+
+  /* line 560, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  .span2 {
+    width: 104px;
+  }
+
+  /* line 560, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  .span3 {
+    width: 166px;
+  }
+
+  /* line 560, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  .span4 {
+    width: 228px;
+  }
+
+  /* line 560, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  .span5 {
+    width: 290px;
+  }
+
+  /* line 560, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  .span6 {
+    width: 352px;
+  }
+
+  /* line 560, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  .span7 {
+    width: 414px;
+  }
+
+  /* line 560, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  .span8 {
+    width: 476px;
+  }
+
+  /* line 560, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  .span9 {
+    width: 538px;
+  }
+
+  /* line 560, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  .span10 {
+    width: 600px;
+  }
+
+  /* line 560, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  .span11 {
+    width: 662px;
+  }
+
+  /* line 560, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  .span12 {
+    width: 724px;
+  }
+
+  /* line 568, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  .offset1 {
+    margin-left: 82px;
+  }
+
+  /* line 568, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  .offset2 {
+    margin-left: 144px;
+  }
+
+  /* line 568, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  .offset3 {
+    margin-left: 206px;
+  }
+
+  /* line 568, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  .offset4 {
+    margin-left: 268px;
+  }
+
+  /* line 568, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  .offset5 {
+    margin-left: 330px;
+  }
+
+  /* line 568, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  .offset6 {
+    margin-left: 392px;
+  }
+
+  /* line 568, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  .offset7 {
+    margin-left: 454px;
+  }
+
+  /* line 568, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  .offset8 {
+    margin-left: 516px;
+  }
+
+  /* line 568, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  .offset9 {
+    margin-left: 578px;
+  }
+
+  /* line 568, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  .offset10 {
+    margin-left: 640px;
+  }
+
+  /* line 568, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  .offset11 {
+    margin-left: 702px;
+  }
+
+  /* line 568, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  .offset12 {
+    margin-left: 764px;
+  }
+
+  /* line 576, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  .row-fluid {
+    width: 100%;
+    *zoom: 1;
+  }
+  /* line 15, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  .row-fluid:before, .row-fluid:after {
+    display: table;
+    content: "";
+  }
+  /* line 19, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  .row-fluid:after {
+    clear: both;
+  }
+  /* line 579, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  .row-fluid [class*="span"] {
+    display: block;
+    width: 100%;
+    min-height: 28px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    float: left;
+    margin-left: 2.762%;
+    *margin-left: 2.709%;
+  }
+  /* line 585, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  .row-fluid [class*="span"]:first-child {
+    margin-left: 0;
+  }
+  /* line 595, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  .row-fluid .span1 {
+    width: 5.801%;
+    *width: 5.748%;
+  }
+  /* line 595, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  .row-fluid .span2 {
+    width: 14.365%;
+    *width: 14.311%;
+  }
+  /* line 595, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  .row-fluid .span3 {
+    width: 22.928%;
+    *width: 22.875%;
+  }
+  /* line 595, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  .row-fluid .span4 {
+    width: 31.492%;
+    *width: 31.439%;
+  }
+  /* line 595, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  .row-fluid .span5 {
+    width: 40.055%;
+    *width: 40.002%;
+  }
+  /* line 595, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  .row-fluid .span6 {
+    width: 48.619%;
+    *width: 48.566%;
+  }
+  /* line 595, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  .row-fluid .span7 {
+    width: 57.182%;
+    *width: 57.129%;
+  }
+  /* line 595, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  .row-fluid .span8 {
+    width: 65.746%;
+    *width: 65.693%;
+  }
+  /* line 595, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  .row-fluid .span9 {
+    width: 74.309%;
+    *width: 74.256%;
+  }
+  /* line 595, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  .row-fluid .span10 {
+    width: 82.873%;
+    *width: 82.82%;
+  }
+  /* line 595, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  .row-fluid .span11 {
+    width: 91.436%;
+    *width: 91.383%;
+  }
+  /* line 595, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  .row-fluid .span12 {
+    width: 100.0%;
+    *width: 99.947%;
+  }
+
+  /* line 604, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  input, textarea, .uneditable-input {
+    margin-left: 0;
+  }
+
+  /* line 613, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  input.span1, textarea.span1, .uneditable-input.span1 {
+    width: 32px;
+  }
+
+  /* line 613, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  input.span2, textarea.span2, .uneditable-input.span2 {
+    width: 94px;
+  }
+
+  /* line 613, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  input.span3, textarea.span3, .uneditable-input.span3 {
+    width: 156px;
+  }
+
+  /* line 613, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  input.span4, textarea.span4, .uneditable-input.span4 {
+    width: 218px;
+  }
+
+  /* line 613, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  input.span5, textarea.span5, .uneditable-input.span5 {
+    width: 280px;
+  }
+
+  /* line 613, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  input.span6, textarea.span6, .uneditable-input.span6 {
+    width: 342px;
+  }
+
+  /* line 613, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  input.span7, textarea.span7, .uneditable-input.span7 {
+    width: 404px;
+  }
+
+  /* line 613, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  input.span8, textarea.span8, .uneditable-input.span8 {
+    width: 466px;
+  }
+
+  /* line 613, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  input.span9, textarea.span9, .uneditable-input.span9 {
+    width: 528px;
+  }
+
+  /* line 613, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  input.span10, textarea.span10, .uneditable-input.span10 {
+    width: 590px;
+  }
+
+  /* line 613, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  input.span11, textarea.span11, .uneditable-input.span11 {
+    width: 652px;
+  }
+
+  /* line 613, ../../../../../.rvm/gems/ruby-1.9.3-p194@likemarks/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+  input.span12, textarea.span12, .uneditable-input.span12 {
+    width: 714px;
   }
 }

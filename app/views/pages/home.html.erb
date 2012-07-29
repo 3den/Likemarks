@@ -1,3 +1,5 @@
+<% set_title "Share what you like!" %>
+
 <% unless current_user %>
 <div class="hero-unit">
   <h1>Share what you like!</h1>
@@ -9,6 +11,6 @@
 </div>
 <% end %>
 
-<div id="search-results">
+<div id="search-results" class="hidden-phone">
   <%= render partial: "searches/result", collection: @results %>
 </div>
