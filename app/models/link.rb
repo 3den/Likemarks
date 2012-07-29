@@ -13,13 +13,13 @@ class Link < ActiveRecord::Base
     transaction do
       user.fb_links(limit).each do |data|
         link = data["link"]
-        next if user.has_link? link
+        next if user.has_link? link or link.size > 250
 
         link_object = Link.find_or_initialize_by_link(link)
         if link_object.new_record?
           link_object.icon = data["icon"]
           link_object.message = data["message"]
-          link_object.name = data["name"]
+          link_object.name = data["name"][0...250]
           link_object.picture = data["picture"]
           link_object.created_time = data["created_time"].to_time
           link_object.rank = 1
