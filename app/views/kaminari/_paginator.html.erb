@@ -14,7 +14,7 @@
       <% end %>
 
       <% each_page do |page| -%>
-        <% if page.left_outer? or page.right_outer? -%>
+        <% if page.left_outer? or page.right_outer? or page.inside_window? -%>
           <li class="<%= "active" if page.current? %>"><%= page_tag page %></li>
         <% elsif !page.was_truncated? -%>
           <li><%= gap_tag %></li>
