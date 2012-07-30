@@ -3,7 +3,7 @@
 <% unless current_user %>
 <div class="hero-unit">
   <h1>Likemarks <small>share what you like!</small></h1>
-  <p>Linkmarks is a bookmark tool and social search engine fully integrated with facebook where all links are indexed and ranked by the users.</p>
+  <p>Linkmarks is a bookmark tool and the social search engine where all links are indexed based on what is shared on facebook.</p>
 
   <p>
     <%= link_to "Login with Facebook!", "/auth/facebook", class: "btn btn-primary btn-large" %>
@@ -11,6 +11,6 @@
 </div>
 <% end %>
 
-<div id="search-results" class="hidden-phone">
+<div id="search-results">
   <%= render partial: "searches/result", collection: @results %>
 </div>
