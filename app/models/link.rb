@@ -12,8 +12,8 @@ class Link < ActiveRecord::Base
   def self.import_links_from(user, limit=20)
     transaction do
       user.fb_links(limit).each do |data|
-        link = data["link"]
-        next if user.has_link? link or link.size > 250
+        link = data["link"].gsub(/\#.+/, "").gsub(/\/$/, "")
+        next if user.has_link? link or link.size > 254
 
         link_object = Link.find_or_initialize_by_link(link)
         if link_object.new_record?
