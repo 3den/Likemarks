@@ -7,7 +7,7 @@
     paginator:     the paginator that renders the pagination tags inside
 -%>
 <%= paginator.render do -%>
-  <div class="pagination pagination-centered">
+  <div class="pagination pagination-centered hidden-phone">
     <ul>
       <% unless current_page.first? %>
         <li><%= prev_page_tag %></li>
