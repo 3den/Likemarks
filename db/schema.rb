@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120729034806) do
+ActiveRecord::Schema.define(:version => 20120730170740) do
 
   create_table "links", :force => true do |t|
     t.text     "message"
@@ -32,6 +32,10 @@ ActiveRecord::Schema.define(:version => 20120729034806) do
     t.integer "link_id"
     t.integer "user_id"
   end
+
+  add_index "links_users", ["link_id"], :name => "index_links_users_on_link_id"
+  add_index "links_users", ["user_id", "link_id"], :name => "index_links_users_on_user_id_and_link_id", :unique => true
+  add_index "links_users", ["user_id"], :name => "index_links_users_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "provider"
