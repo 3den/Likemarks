@@ -3,9 +3,7 @@
     <h3><%= link_to result.name, result.link, targed: "_blank" %></h3>
     <p class="link-users">
       <small>shared by:</small>
-      <% result.users.limit(5).map do |user| %>
-        <%= link_to user.name, user_path(user.id) %>
-      <% end.join(", ") %>
+      <%= raw link_to_users(result.users) %>
     </p>
     <p><small><%= time_ago_in_words result.created_time %></small>
       <%= result.message %></p>
