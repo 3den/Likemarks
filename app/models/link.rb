@@ -23,11 +23,10 @@ class Link < ActiveRecord::Base
           link_object.created_time = data["created_time"].to_time
           link_object.rank = 1
         else
-          link_object.users << user
           link_object.rank += 1
         end
-        link_object.save
 
+        link_object.save
         user.links << link_object
       end
     end
