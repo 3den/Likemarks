@@ -7,7 +7,7 @@
     paginator:     the paginator that renders the pagination tags inside
 -%>
 <%= paginator.render do -%>
-  <div class="pagination pagination-centered hidden-phone">
+  <div class="pagination pagination-centered">
     <ul>
       <% unless current_page.first? %>
         <li><%= prev_page_tag %></li>
@@ -16,8 +16,6 @@
       <% each_page do |page| -%>
         <% if page.left_outer? or page.right_outer? or page.inside_window? -%>
           <li class="<%= "active" if page.current? %>"><%= page_tag page %></li>
-        <% elsif !page.was_truncated? -%>
-          <li><%= gap_tag %></li>
         <% end -%>
       <% end -%>
 
