@@ -1,15 +1,24 @@
 require 'spec_helper'
 
-# Specs in this file have access to a helper object that includes
-# the SearchesHelper. For example:
-#
-# describe SearchesHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       helper.concat_strings("this","that").should == "this that"
-#     end
-#   end
-# end
 describe SearchesHelper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "#link_to_users" do
+    it "show the link to a single user" do
+      users = double(limit: [
+        double(name: "Mark", id: 1)
+      ])
+
+      html = helper.link_to_users(users)
+      html.should == '<a href="/user/1">Mark</a>'
+    end
+
+    it "show the two users separated by coma" do
+      users = double(limit: [
+        double(name: "Mark", id: 1),
+        double(name: "Eden", id: 2)
+      ])
+
+      html = helper.link_to_users(users)
+      html.should == '<a href="/user/1">Mark</a>, <a href="/user/2">Eden</a>'
+    end
+  end
 end

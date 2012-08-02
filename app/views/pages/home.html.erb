@@ -1,12 +1,13 @@
-<% set_title "share and enjoy!" %>
+<% set_title t('views.pages.home.slogan') %>
 
 <% unless current_user %>
 <div class="hero-unit">
-  <h1>share and enjoy!</h1><br />
-  <p>Likemarks is the social search engine where all links are indexed based on what is shared on facebook.</p>
+  <h1><%= t 'views.pages.home.slogan' %></h1><br />
+  <p><%= t 'views.pages.home.description' %></p>
 
   <p>
-    <%= link_to "Login with Facebook!", "/auth/facebook", class: "btn btn-primary btn-large" %>
+    <%= link_to t('views.pages.home.fb_login'), "/auth/facebook",
+      class: "btn btn-primary btn-large" %>
   </p>
 </div>
 <% end %>

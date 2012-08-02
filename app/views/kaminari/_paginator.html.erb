@@ -1,11 +1,3 @@
-<%# The container tag
-  - available local variables
-    current_page:  a page object for the currently displayed page
-    num_pages:     total number of pages
-    per_page:      number of items to fetch per page
-    remote:        data-remote
-    paginator:     the paginator that renders the pagination tags inside
--%>
 <%= paginator.render do -%>
   <div class="pagination pagination-centered">
     <ul>
@@ -15,7 +7,9 @@
 
       <% each_page do |page| -%>
         <% if page.left_outer? or page.right_outer? or page.inside_window? -%>
-          <li class="<%= "active" if page.current? %>"><%= page_tag page %></li>
+          <li class="<%= "active" if page.current? %>">
+            <%= page_tag page %>
+          </li>
         <% end -%>
       <% end -%>
 

@@ -8,6 +8,7 @@ gem 'pg_search'
 group :development, :test do
   gem "rspec-rails"
   gem "pry-rails"
+  gem 'factory_girl'
 end
 
 group :assets do

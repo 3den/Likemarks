@@ -1,8 +1,7 @@
 <div class="result row">
   <div class="span12">
     <h3><%= link_to result.name, result.link, targed: "_blank" %></h3>
-    <%= link_to image_tag(result.picture, class: "link-picture"),
-      result.link %>
+    <%= image_tag(result.picture, class: "link-picture") %>
     <p class="link-users">
       <small>by</small>
       <%= raw link_to_users(result.users) %>
