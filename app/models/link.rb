@@ -17,10 +17,7 @@ class Link < ActiveRecord::Base
 
         link_object = Link.find_or_initialize_by_link(link)
         if link_object.new_record?
-          link_object.message = data["message"]
-          link_object.name = data["name"][0...255] rescue nil
-          link_object.picture = data["picture"][0...255] rescue nil
-          link_object.created_time = data["created_time"].to_time
+          link_object.load_data data
           link_object.rank = 1
         else
           link_object.rank += 1
@@ -32,4 +29,12 @@ class Link < ActiveRecord::Base
     end
   end
 
+  def load_data(data)
+    self.message = data["message"] if data["message"]
+    self.name = data["name"][0...255] if data["name"]
+    self.created_time = data["created_time"] if data["created_time"]
+    if data["picture"] and data["picture"].size < 256
+      self.picture = data["picture"]
+    end
+  end
 end

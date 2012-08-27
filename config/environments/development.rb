@@ -1,3 +1,6 @@
+ENV['FACEBOOK_APP_ID'] = "448304595199912"
+ENV['FACEBOOK_SECRET'] = "77810e9f24c8320ce24c8040f4585160"
+
 Likemarks::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 

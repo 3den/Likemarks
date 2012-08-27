@@ -4,13 +4,17 @@ describe User do
 
   describe ".from_omniauth" do
     let(:auth) do
-      double(provider: "facebook", uid: "1123",
-             info: double(name: "Marcelo", nickname: "eden",
-                          image: "http://image.com/abn.jpg"),
-             credentials: double(token: "1234",
-             expires_at: 1321747205),
-             slice: {provider: "facebook", uid: "1123"})
-
+      double(
+        provider: "facebook", uid: "1123",
+        info: double(
+          name: "Marcelo",
+          nickname: "eden",
+          image: "http://image.com/abn.jpg"
+        ),
+        credentials: double(token: "1234",
+        expires_at: 1321747205),
+        slice: {provider: "facebook", uid: "1123"}
+      )
     end
 
     it "creates an new user" do

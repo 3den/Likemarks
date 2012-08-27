@@ -1,23 +1,27 @@
 class User < ActiveRecord::Base
-  USERNAME_REGEX = /\@\w+/
+  USERNAME_REGEX = /\@[\w\.]+/
 
   has_and_belongs_to_many :links
-  attr_accessible :name, :username, :oauth_expires_at,
-    :oauth_token, :provider, :uid
   validates :name, :oauth_token, presence: true
 
 
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
-      user.provider = auth.provider
-      user.uid = auth.uid
-      user.name = auth.info.name
-      user.username = auth.info.nickname
-      user.picture = auth.info.image
-      user.oauth_token = auth.credentials.token
-      user.oauth_expires_at = Time.at(auth.credentials.expires_at)
+      user.load_auth auth
       user.save!
     end
+  end
+
+  def load_auth(auth)
+    self.provider = auth.provider
+    self.uid = auth.uid
+    self.name = auth.info.name
+    self.picture = auth.info.image
+    self.username = auth.info.nickname.present? ?
+      auth.info.nickname.gsub(".", "") :
+      name.gsub(/\W/, "")
+    self.oauth_token = auth.credentials.token
+    self.oauth_expires_at = Time.at(auth.credentials.expires_at)
   end
 
   # Get all non-facebook links shared by the user
