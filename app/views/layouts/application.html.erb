@@ -3,14 +3,16 @@
   <head>
     <title><%= yield(:title) || "likemarks" %></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= stylesheet_link_tag "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
   </head>
 
-  <body data-spy="scroll" data-target=".subnav" data-offset="50" data-twttr-rendered="true">
+  <body>
     <%= render partial: "layouts/header" %>
-    <div class="container" id="main"><%= yield %></div>
+    <div class="container">
+      <div id="main"><%= yield %></div>
+    </div>
     <%= render partial: "layouts/footer" %>
   </body>
 </html>

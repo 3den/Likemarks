@@ -1,4 +1,4 @@
-<div class="result row">
+<div class="result row-fluid">
   <div class="span12">
     <h3><%= link_to result.name, result.link, targed: "_blank" %></h3>
     <%= image_tag(result.picture, class: "link-picture") %>
@@ -6,7 +6,8 @@
       <small>by</small>
       <%= raw link_to_users(result.users) %>
     </p>
-    <p class="span10"><small><%= time_ago_in_words result.created_time %></small>
-      <%= result.message %></p>
+    <p class="link-created-time">
+      <small><%= time_ago_in_words result.created_time %></small>
+    </p>
   </div>
 </div>
