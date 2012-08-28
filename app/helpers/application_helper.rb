@@ -5,8 +5,18 @@ module ApplicationHelper
   end
 
   def manifest_attribute
-    Rails.env.production? || true ?
+    Rails.env.production? ?
       'manifest="/production.appcache"'.html_safe :
+      ""
+  end
+
+  def current_path?(path)
+    request.path == path
+  end
+
+  def active_class_for(path)
+    current_path?(path) ?
+      'class="active"'.html_safe :
       ""
   end
 end

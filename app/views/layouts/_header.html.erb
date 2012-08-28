@@ -15,12 +15,12 @@
           class: "search-query span4",
           placeholder: t('header.search') %>
       <% end %>
-
       <div class="nav-collapse collapse">
         <ul class="nav pull-right">
           <% if current_user %>
-            <li>
-              <%= link_to t('header.my_links'), user_path(current_user),
+            <li <%= active_class_for user_path(current_user) %>>
+              <%= link_to t('header.my_links'),
+                user_path(current_user),
                 id: 'load-links' %>
             </li>
             <li class="divider-vertical"></li>
