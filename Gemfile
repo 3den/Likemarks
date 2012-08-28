@@ -6,8 +6,8 @@ gem 'pg'
 gem 'pg_search'
 
 group :development, :test do
-  gem "rspec-rails"
-  gem "pry-rails"
+  gem 'rspec-rails'
+  gem 'pry-rails'
   gem 'factory_girl'
 end
 
@@ -21,5 +21,6 @@ gem 'heroku'
 gem 'omniauth-facebook'
 gem 'koala'
 gem 'jquery-rails'
-gem "bootstrap-sass"
+gem 'bootstrap-sass'
 gem 'kaminari'
+gem 'backbone-on-rails'

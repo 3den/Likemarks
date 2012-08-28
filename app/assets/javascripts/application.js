@@ -14,4 +14,9 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require config
+//= require underscore
+//= require backbone
+//
+//= require likemarks
+//= require_tree ../templates/
 //= require_tree .
