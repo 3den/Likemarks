@@ -10,5 +10,7 @@ Likemarks::Application.routes.draw do
   get "search" => "searches#index", as: 'search'
   get "terms" => "pages#terms"
 
+  match ":action.appcache", controller: :cache, format: :appcache
+
   root :to => "pages#home"
 end

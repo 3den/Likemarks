@@ -7,4 +7,15 @@ describe ApplicationHelper do
       helper.content_for(:title).should == "likemarks: The Title"
     end
   end
+
+  describe "#manifest_attribute" do
+    it "returns nothing when is not in production mode" do
+      helper.manifest_attribute.should == ""
+    end
+
+    it "returns the appcache when is in production mode" do
+      Rails.env.stub(production?: true)
+      helper.manifest_attribute.should == 'manifest="/production.appcache"'
+    end
+  end
 end
