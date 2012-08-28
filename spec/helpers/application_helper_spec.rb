@@ -15,7 +15,7 @@ describe ApplicationHelper do
 
     it "returns the appcache when is in production mode" do
       Rails.env.stub(production?: true)
-      helper.manifest_attribute.should == 'manifest="/production.appcache"'
+      helper.manifest_attribute.should == 'manifest="cache.manifest"'
     end
   end
 end
