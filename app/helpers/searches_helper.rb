@@ -4,4 +4,10 @@ module SearchesHelper
       link_to user.name, user_path(user.id)
     end.join(", ")
   end
+
+  def picture_for picture, options={}
+    picture =~ /^http/ ?
+      image_tag(picture, options) :
+      ""
+  end
 end

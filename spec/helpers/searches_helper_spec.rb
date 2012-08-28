@@ -21,4 +21,16 @@ describe SearchesHelper do
       html.should == '<a href="/user/1">Mark</a>, <a href="/user/2">Eden</a>'
     end
   end
+
+  describe "#picture_for" do
+    it "returns an image tag if the picture starts with http" do
+      html = helper.picture_for "http://something"
+      html.should == '<img alt="Something" src="http://something" />'
+    end
+
+    it "returns nothing if the picture starts with /assets" do
+      html = helper.picture_for "/assets/something.png"
+      html.should == ''
+    end
+  end
 end
