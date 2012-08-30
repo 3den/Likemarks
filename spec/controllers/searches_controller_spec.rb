@@ -10,12 +10,16 @@ describe SearchesController do
   end
 
   describe "GET 'show'" do
-    let(:user) { FactoryGirl.build_stubbed(:user) }
+    let(:results) {[double]}
+    let(:user) {double(links: double(page: results),
+                       username: "marcelo")}
+
     it "returns http success" do
       User.should_receive(:find).with("1").and_return(user)
-      user.should_receive(:fb_links).and_return([])
+      Link.should_receive(:import_links_from).with(user)
+
       get 'show', id: 1
-      assigns[:results].should == []
+      assigns[:results].should == results
       response.should render_template('show')
     end
   end

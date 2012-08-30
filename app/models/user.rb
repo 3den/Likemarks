@@ -4,9 +4,10 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :links
   validates :name, :oauth_token, presence: true
 
-
   def self.from_omniauth(auth)
-    where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
+    where(
+      auth.slice(:provider, :uid)
+    ).first_or_initialize.tap do |user|
       user.load_auth auth
       user.save!
     end
@@ -33,7 +34,10 @@ class User < ActiveRecord::Base
     links.find_by_link(link).present?
   end
 
+  private
+
   def facebook
     @facebook ||= Likemarks::Facebook.new oauth_token
   end
+
 end

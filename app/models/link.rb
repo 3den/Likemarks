@@ -5,9 +5,8 @@ class Link < ActiveRecord::Base
   validates :link, uniqueness: true
 
   default_scope order("rank DESC, created_time DESC")
-  pg_search_scope :search, against: [:link, :name, :message], using: {
-    tsearch: {prefix: true, dictionary: "simple"}
-  }
+  pg_search_scope :search, against: [:link, :name, :message],
+    using: { tsearch: {prefix: true, dictionary: "simple"} }
 
   def self.import_links_from(user, limit=20)
     transaction do
