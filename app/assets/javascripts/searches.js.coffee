@@ -1,3 +1,0 @@
-$ ->
-  $("img").error ->
-    $(this).remove()

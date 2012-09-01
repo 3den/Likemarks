@@ -1,0 +1,23 @@
+<div id="search-results">
+  <% for link in @links.models: %>
+    <div class="result row-fluid">
+      <div class="span12">
+        <h3>
+          <a href="<%= link.get("link") %>" target="_blank">
+            <%= link.get("name") %>
+          </a>
+        </h3>
+
+        <img src="<%= link.get("picture") %>"
+          class="link-picture" \>
+
+        <p class="link-users">
+        </p>
+
+        <p class="link-created-time">
+          <small><%= link.get("created_time") %></small>
+        </p>
+      </div>
+    </div>
+  <% end %>
+</div>

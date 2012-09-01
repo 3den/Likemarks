@@ -4,7 +4,14 @@ window.Likemarks =
   Views: {}
   Routers: {}
   init: ->
-    console.log 'Hello from Backbone!'
+    new Likemarks.Views.Shared()
+    new Likemarks.Routers.Pages()
+    new Likemarks.Routers.Users()
+    new Likemarks.Routers.Sessions()
+    new Likemarks.Routers.Links()
+
+    Backbone.history.start(pushState: true)
 
 $ ->
   Likemarks.init()
+

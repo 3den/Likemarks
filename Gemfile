@@ -6,6 +6,7 @@ gem 'pg'
 gem 'pg_search'
 
 group :development, :test do
+  gem 'jasmine-rails'
   gem 'rspec-rails'
   gem 'pry-rails'
   gem 'factory_girl'
