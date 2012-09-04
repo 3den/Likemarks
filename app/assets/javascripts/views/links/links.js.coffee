@@ -3,10 +3,10 @@ class Likemarks.Views.LinksIndex extends Backbone.View
   el: "#search-results"
 
   initialize: ->
-    $(@el).empty()
     @collection.on('reset', @render, this)
 
   render: ->
+    $(@el).empty()
     @collection.each @append
     @remove_broken_images()
     this
