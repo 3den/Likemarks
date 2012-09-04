@@ -6,7 +6,7 @@ module ApplicationHelper
 
   def manifest_attribute
     Rails.env.production? ?
-      'manifest="cache.manifest"'.html_safe :
+      'manifest="/cache.manifest"'.html_safe :
       ""
   end
 
