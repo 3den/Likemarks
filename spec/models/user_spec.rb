@@ -1,6 +1,27 @@
 require "spec_helper"
 
 describe User do
+  describe "#valid?" do
+    let(:attributes) {{name: "Marcelo Eden", username: "eden",
+                       oauth_token: "123"}}
+
+    [:username, :name, :oauth_token].each do |key|
+      it "validates presence of #{key}" do
+        user = User.new
+
+        user.should_not be_valid
+        user.errors[key].should include "can't be blank"
+      end
+    end
+
+    it "validates uniqueness of username" do
+      FactoryGirl.create(:user)
+      user = FactoryGirl.build(:user)
+
+      user.should_not be_valid
+      user.errors[:username].should include "has already been taken"
+    end
+  end
 
   describe ".from_omniauth" do
     let(:auth) do

@@ -3,8 +3,12 @@ class Likemarks.Routers.Pages extends Backbone.Router
     '': "home"
     'terms': "terms"
 
-  home: ->
-    alert("home")
+  initialize: ->
+    @collection = Likemarks.links
 
-  terms: ->
-    alert("terms")
+  home: ->
+    $("#q").val("")
+    new Likemarks.Views.LinksIndex(
+      collection: @collection.search(limit: 10)
+    ).render()
+

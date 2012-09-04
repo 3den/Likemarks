@@ -1,0 +1,25 @@
+<% link = @link %>
+<div class="result row-fluid">
+  <div class="span12">
+    <h3>
+      <a href="<%= link.get("link") %>" target="_blank">
+        <%= link.get("name") %>
+      </a>
+    </h3>
+
+    <%= @safe h.picture_for(link.get("picture")) %>
+
+    <p class="link-users">
+      <small>by</small>
+      <% for user in link.get("users"): %>
+        <a href="<%= "/#{user.username}" %>">
+          <%= user.name %>
+        </a>
+      <% end %>
+    </p>
+
+    <p class="link-created-time">
+      <small><%= link.get("created_time") %></small>
+    </p>
+  </div>
+</div>

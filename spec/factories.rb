@@ -14,7 +14,7 @@ FactoryGirl.define do
     username "eden"
     picture "http://my.picture.com/abc.jpg"
     oauth_token "xxx"
-    oauth_expires_at 1321747205
+    oauth_expires_at Time.now
     provider "facebook"
     uid "123"
   end

@@ -70,7 +70,6 @@ src_dir:
 # Spec directory path. Your spec_files must be returned relative to this path.
 # Default: spec/javascripts
 #
-{ EXAMPLE:
 #
 # spec_dir: spec/javascripts
 #

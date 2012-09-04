@@ -5,7 +5,11 @@ class PagesController < ApplicationController
   end
 
   def home
-    @results = Link.limit(10)
+    @results = Likemarks::LinkSearch.new(self).links
     respond_with @results
+  end
+
+  def scope_for(username)
+    Link.limit(10)
   end
 end

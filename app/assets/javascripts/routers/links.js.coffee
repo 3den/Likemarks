@@ -4,9 +4,9 @@ class Likemarks.Routers.Links extends Backbone.Router
     'search/:query': "index"
 
   initialize: ->
-    @collection = new Likemarks.Collections.Links()
+    @collection = Likemarks.links
 
   index: (query="") ->
-    new Likemarks.Views.LinksIndex(
-      collection: @collection.search query
+    $("#main").html new Likemarks.Views.LinksIndex(
+      collection: @collection.search(q: query)
     ).render().el

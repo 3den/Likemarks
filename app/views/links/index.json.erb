@@ -1,0 +1,6 @@
+<%= @results.map do |link|
+  hash = link.attributes
+  hash["users"] = link.users.limit(5)
+  hash["created_time"] = time_ago_in_words link.created_time
+  hash
+end.to_json.html_safe %>

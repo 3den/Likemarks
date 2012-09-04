@@ -1,0 +1,13 @@
+<div class="result row-fluid">
+  <div class="span12">
+    <h3><%= link_to link.name, link.link, target: "_blank" %></h3>
+    <%= picture_for link.picture, class: "link-picture" %>
+    <p class="link-users">
+      <small>by</small>
+      <%= raw link_to_users(link.users) %>
+    </p>
+    <p class="link-created-time">
+      <small><%= time_ago_in_words link.created_time %></small>
+    </p>
+  </div>
+</div>

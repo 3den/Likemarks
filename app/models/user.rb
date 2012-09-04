@@ -1,8 +1,7 @@
 class User < ActiveRecord::Base
-  USERNAME_REGEX = /\@[\w\.]+/
-
   has_and_belongs_to_many :links
-  validates :name, :oauth_token, presence: true
+  validates :name, :username, :oauth_token, presence: true
+  validates :username, uniqueness: true
 
   def self.from_omniauth(auth)
     where(
@@ -18,14 +17,13 @@ class User < ActiveRecord::Base
     self.uid = auth.uid
     self.name = auth.info.name
     self.picture = auth.info.image
-    self.username = auth.info.nickname.present? ?
-      auth.info.nickname.gsub(".", "") :
-      name.gsub(/\W/, "")
     self.oauth_token = auth.credentials.token
     self.oauth_expires_at = Time.at(auth.credentials.expires_at)
+    self.username = auth.info.nickname.present? ?
+      auth.info.nickname.gsub(".", "") :
+      "#{name.gsub(/\W/, "")}_#{uid}"
   end
 
-  # Get all non-facebook links shared by the user
   def fb_links(limit)
     facebook.links(limit)
   end
@@ -34,10 +32,13 @@ class User < ActiveRecord::Base
     links.find_by_link(link).present?
   end
 
+  def to_param
+    username
+  end
+
   private
 
   def facebook
     @facebook ||= Likemarks::Facebook.new oauth_token
   end
-
 end

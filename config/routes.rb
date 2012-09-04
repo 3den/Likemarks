@@ -7,18 +7,19 @@ Likemarks::Application.routes.draw do
   match "cache.manifest" => "cache#show", format: :manifest,
     as: :appcache
 
-  resources :searches, only: [:index]
+  resources :links, only: [:index]
   resources :users, only: [:show]
 
   scope "api", format: :json do
-    resources :searches, only: [:index]
+    resources :links, only: [:index]
     resources :users, only: [:show]
+    get "home" => "pages#home"
   end
 
   get "terms" => "pages#terms"
   get "home" => "pages#home"
-  get "search" => "searches#index", as: :search
-  get "search/:q" => "searches#index"
+  get "search" => "links#index", as: :search
+  get "search/:q" => "links#index"
   get "user/:id" => "users#show"
   get ":id" => "users#show", as: :user
 
