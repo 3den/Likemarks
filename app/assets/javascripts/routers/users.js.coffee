@@ -4,7 +4,7 @@ class Likemarks.Routers.Users extends Backbone.Router
     ':id': "show"
 
   initialize: ->
-    @collection = new Likemarks.links
+    @collection = Likemarks.links
 
   show: (id) ->
     $("#main").html new Likemarks.Views.LinksIndex(
