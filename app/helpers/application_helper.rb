@@ -5,7 +5,9 @@ module ApplicationHelper
   end
 
   def manifest_attribute
-    "manifest=\"#{appcache_path}\"".html_safe
+    Rails.env.production? ?
+      "manifest=\"#{appcache_path}\"".html_safe :
+      ""
   end
 
   def current_path?(path)

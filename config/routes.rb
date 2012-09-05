@@ -1,6 +1,4 @@
 Likemarks::Application.routes.draw do
-  get "user/show"
-
   match 'auth/:provider/callback', to: 'sessions#create'
   match 'auth/failure', to: redirect('/')
   match 'signout', to: 'sessions#destroy', as: 'signout'
@@ -13,7 +11,6 @@ Likemarks::Application.routes.draw do
   scope "api", format: :json do
     resources :links, only: [:index]
     resources :users, only: [:show]
-    get "home" => "pages#home"
   end
 
   get "terms" => "pages#terms"

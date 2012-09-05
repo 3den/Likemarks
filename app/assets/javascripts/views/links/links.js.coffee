@@ -3,7 +3,8 @@ class Likemarks.Views.LinksIndex extends Backbone.View
   el: "#search-results"
 
   initialize: ->
-    @collection.on('reset', @render, this)
+    @collection.on 'reset', @render, this
+    @collection.on 'add', @append, this
 
   render: ->
     $(@el).empty()

@@ -18,11 +18,11 @@ window.Likemarks =
     Backbone.history.start(pushState: true)
 
 $ ->
+  new I18n("en")
   Likemarks.init()
 
-  #$(window).scroll (e) ->
-  #  height = $(document).height() - 5
-  #  distance = $(document).scrollTop() + $(window).height()
-  #  if height <= distance
-  #    console.log "scrolling..."
-  #    Likemarks.links.search(q: $("#q"), limit: 20)
+  $(window).scroll (e) ->
+    height = $(document).height() - 5
+    distance = $(document).scrollTop() + $(window).height()
+    if height <= distance
+      Likemarks.links.scroll()
