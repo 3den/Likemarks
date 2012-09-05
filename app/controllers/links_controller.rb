@@ -7,7 +7,7 @@ class LinksController < ApplicationController
   end
 
   def scope_for(username)
-    user = User.find_by_username(username) if username.blank?
+    user = User.find_by_username(username) if username.present?
     user.present? ? user.links : Link
   end
 end
