@@ -17,6 +17,8 @@
 //= require underscore
 //= require backbone
 //
+//= require ./locales/i18n
+//= require_tree ./locales/
 //= require_tree ./lib/
 //
 //= require likemarks
