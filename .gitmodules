@@ -1,0 +1,3 @@
+[submodule "vendor/assets/javascripts/jquery_cookie"]
+	path = vendor/assets/javascripts/jquery_cookie
+	url = git@github.com:3den/jquery_cookie.git

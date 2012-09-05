@@ -1,16 +1,14 @@
 class Likemarks.Views.Shared.SearchForm extends Backbone.View
   el: "#search-form"
+  searched_query: ""
 
   events:
     'submit': "search"
-    'change': "auto_search"
 
   search: (e) ->
     e.preventDefault()
-    Backbone.history.navigate("search/#{@query()}", true)
-
-  auto_search: (e) ->
-    @search(e)
+    @searched_query = @query()
+    Backbone.history.navigate("search/#{@searched_query}", true)
 
   query: ->
     $("#q").val()

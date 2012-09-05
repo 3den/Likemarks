@@ -1,5 +1,6 @@
 module Likemarks
   class Facebook
+    BLACKLIST=%w{facebook.com mooday.me}
     attr_accessor :fb
 
     def initialize(oauth_token)
@@ -12,7 +13,7 @@ module Likemarks
     def links(limit)
       links = fb.get_connection("me", "links?limit=#{limit}")
       links.select do |link|
-        not link["link"].include? "facebook.com"
+        BLACKLIST.none? {|word| link["link"].include? word}
       end
     end
 
