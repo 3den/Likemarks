@@ -12,6 +12,10 @@ class Likemarks.Views.LinksIndex extends Backbone.View
     @remove_broken_images()
     this
 
+  loading: (state) ->
+    loader = $("#loading")
+    if state then loader.show() else loader.hide();
+
   append: (model) =>
     view = new Likemarks.Views.Link(model: model)
     $(@el).append view.render().el

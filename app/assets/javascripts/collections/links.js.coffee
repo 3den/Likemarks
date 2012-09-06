@@ -7,8 +7,6 @@ class Likemarks.Collections.Links extends Backbone.Collection
     this
 
   scroll: ->
-    return this if this.models.length < 1
-
     @options.page ||= 0
     @options.page++
     @fetch({data: @options, add: true})
