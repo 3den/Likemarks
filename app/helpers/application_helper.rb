@@ -19,4 +19,11 @@ module ApplicationHelper
       'class="active"'.html_safe :
       ""
   end
+
+  def query
+    html = []
+    html << "@#{params[:username]}" if params[:username]
+    html << params[:q] if params[:q]
+    html.join " "
+  end
 end

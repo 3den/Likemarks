@@ -17,8 +17,7 @@ Likemarks::Application.routes.draw do
   get "home" => "pages#home"
   get "search" => "links#index", as: :search
   get "search/:q" => "links#index"
-  get "user/:id" => "users#show"
-  get ":id" => "users#show", as: :user
+  get ":username" => "links#index", as: :user
 
   root :to => "pages#home"
 end

@@ -5,6 +5,7 @@ class Link < ActiveRecord::Base
     :message, :name, :picture
 
   has_and_belongs_to_many :users
+  validates :name, :link, presence: true
   validates :link, uniqueness: true
 
   default_scope order("rank DESC, created_time DESC")
@@ -14,21 +15,7 @@ class Link < ActiveRecord::Base
 
   def self.import_links_from(user, limit=20)
     transaction do
-      user.fb_links(limit).each do |data|
-        link = data["link"].gsub(/\#.+/, "").gsub(/\/$/, "")
-        next if user.has_link? link or link.size > 254
-
-        link_object = Link.find_or_initialize_by_link(link)
-        if link_object.new_record?
-          link_object.load_data data
-          link_object.rank = 1
-        else
-          link_object.rank += 1
-        end
-
-        link_object.save
-        user.links << link_object
-      end
+      Likemarks::LinkImporter.import_from(user, limit)
     end
   end
 
@@ -36,8 +23,12 @@ class Link < ActiveRecord::Base
     self.message = data["message"] if data["message"]
     self.name = data["name"][0...255] if data["name"]
     self.created_time = data["created_time"] if data["created_time"]
+    self.rank += 1
+
     if data["picture"] and data["picture"].size < 256
       self.picture = data["picture"]
     end
+
+    save
   end
 end

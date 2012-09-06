@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  respond_to :html, :json
+
   def create
     user = User.from_omniauth(env["omniauth.auth"])
     Link.import_links_from user

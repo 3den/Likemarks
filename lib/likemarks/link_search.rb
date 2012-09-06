@@ -15,7 +15,9 @@ module Likemarks
     end
 
     def username
-      @username ||= params[:q].match(USERNAME_REGEX)[0] rescue nil
+      @username ||=
+        params[:username] ||
+        params[:q].match(USERNAME_REGEX)[0] rescue nil
     end
 
     private
@@ -25,7 +27,8 @@ module Likemarks
     end
 
     def query
-      params[:q].gsub("@#{username}", "") rescue nil
+      @query ||=
+        params[:q].gsub!("@#{username}", "") rescue nil
     end
 
     def scope

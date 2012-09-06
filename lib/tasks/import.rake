@@ -5,8 +5,8 @@ namespace :import do
   task links: :environment do
     limit = ENV['limit'] || 100
     User.find_each do |user|
-      Link.import_links_from(user, limit) rescue nil
-      p "Imported #{user.links.size} links from #{user.name}..."
+      Link.import_links_from(user, limit)
+      puts "Imported #{user.links.size} links from #{user.name}..."
     end
   end
 end

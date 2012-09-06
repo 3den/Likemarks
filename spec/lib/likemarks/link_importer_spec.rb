@@ -2,14 +2,20 @@ require 'likemarks/link_importer'
 
 module Likemarks
   describe LinkImporter do
-    let(:links) {[double, double]}
-    let(:user) {double}
-    subject {LinkImporter.new user}
+    let(:links) {[{}, {}]}
+    let(:user) {double(fb_links: links)}
 
-    describe "#import" do
+    describe ".import_from" do
       it "imports links from user" do
-        links = subject.import
-        links.should == links
+        item = LinkImporter.new(user, {})
+        item.should_receive(:save)
+        item.should_receive(:save)
+        LinkImporter.
+          stub(:new).
+          with(user, {}).
+          and_return(item)
+
+        links = LinkImporter.import_from(user)
       end
     end
   end
