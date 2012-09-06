@@ -62,8 +62,38 @@ h3, h2, h1 {
 }
 
 @media (max-width: 767px) {
+  .navbar-fixed-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    margin-left: 0;
+    margin-right: 0;
+  }
+
   footer.well {
     margin-left: -20px;
     margin-right: -20px;
+  }
+}
+
+@media (max-width: 979px) {
+  .navbar {
+    &.navbar-fixed-top {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+
+    .container {
+      max-width: 724px;
+    }
+  }
+
+  body {
+    padding-top: 65px;
+    font-size: 14px;
   }
 }
