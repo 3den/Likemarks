@@ -8,14 +8,9 @@
     </h3>
 
     <%= @safe h.picture_for(link.get("picture")) %>
-
     <p class="link-users">
       <small>by</small>
-      <% for user in link.get("users"): %>
-        <a href="<%= "/#{user.username}" %>">
-          <%= user.name %>
-        </a>
-      <% end %>
+      <%= @safe h.links_for_users(link.get("users")) %>
     </p>
 
     <p class="link-created-time">
