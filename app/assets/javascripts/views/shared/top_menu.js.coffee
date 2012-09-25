@@ -4,6 +4,5 @@ class Likemarks.Views.Shared.TopMenu extends Backbone.View
 
   render: ->
     $(@el).html @template(user: @model.attributes)
-    console.log @model
     this
 
