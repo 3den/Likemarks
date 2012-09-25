@@ -28,7 +28,7 @@ module Likemarks
 
     def query
       @query ||=
-        params[:q].gsub!("@#{username}", "") rescue nil
+        params[:q].gsub("@#{username}", "") rescue nil
     end
 
     def scope

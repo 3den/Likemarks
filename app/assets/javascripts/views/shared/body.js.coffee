@@ -4,6 +4,7 @@ class Likemarks.Views.Shared.Body extends Backbone.View
   events:
     'click a.brand': "click_link"
     'click a#load-links': "click_link"
+    'click #main a': "click_link"
 
   click_link: (e) ->
     href = $(e.target).attr('href')
