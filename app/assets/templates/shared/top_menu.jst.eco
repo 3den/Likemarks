@@ -1,0 +1,16 @@
+<% user = @user %>
+<ul class="nav pull-right">
+  <% if user.uid?: %>
+    <li class="active">
+      <a href="/marceloeden" id="load-links">My Links</a>
+    </li>
+    <li class="divider-vertical"></li>
+    <li>
+      <a href="/signout" id="fb-logout">Sign Out</a>
+    </li>
+  <% else: %>
+    <li>
+      <a href="/auth/facebook" id="fb-login">Sign in with Facebook</a>
+    </li>
+  <% end %>
+</ul>

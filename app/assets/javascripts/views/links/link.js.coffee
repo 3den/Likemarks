@@ -4,4 +4,3 @@ class Likemarks.Views.Link extends Backbone.View
   render: ->
     $(@el).html @template(link: @model)
     this
-
