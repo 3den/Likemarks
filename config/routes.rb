@@ -2,8 +2,7 @@ Likemarks::Application.routes.draw do
   match 'auth/:provider/callback', to: 'sessions#create'
   match 'auth/failure', to: redirect('/')
   match 'signout', to: 'sessions#destroy', as: 'signout'
-  match "cache.manifest" => "cache#show", format: :manifest,
-    as: :appcache
+  match "cache.manifest" => "cache#show", format: :manifest, as: :appcache
 
   resources :links, only: [:index]
   resources :users, only: [:show]
