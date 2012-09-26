@@ -1,0 +1,39 @@
+#search-form
+  #q
+    background: rgba(255,255,255, 0.2)
+    border-color: rgba(0,0,0, 0.4)
+    color: rgba(255,255,255, 0.7)
+    &.placeholder, &:-moz-placeholder, &::-webkit-input-placeholder
+      color: #fff
+    &:focus
+      background: #fff
+      color: #000
+
+#search-results
+  .result
+    margin-bottom: 0.5em
+    overflow-x: hidden
+
+    p
+      margin: 0
+    p.link-url
+      a
+        text-decoration: none
+        color: #029E40
+    p.link-users
+      a
+        text-decoration: none
+        color: #029E40
+
+    img.link-picture
+      float: left
+      max-height: 30px!important
+      margin: 5px 10px 0 0
+
+    h3
+      margin: 0
+      line-height: 1.0em
+      a
+        font-weight: normal
+        text-decoration: none
+        font-size: medium

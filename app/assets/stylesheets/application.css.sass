@@ -1,0 +1,81 @@
+$navbarBackground: #3B5998
+$navbarBackgroundHighlight: $navbarBackground
+$navbarLinkBackgroundHover: $navbarBackground
+$navbarText: #FFF
+$navbarBrandColor: #FFF
+$navbarLinkColor: #FFF
+$navbarLinkColorHover: #FFF
+$sansFontFamily: 'lucida grande',tahoma,verdana,arial,sans-serif
+
+@import "bootstrap"
+@import "mixins"
+
+body
+  padding-top: 60px
+  font-size: 14px
+
+a
+  opacity: 0.8
+
+a:hover
+  opacity: 1.0
+
+.navbar
+  font-family: $monoFontFamily
+  .brand
+    opacity: 1.0
+    padding-top: 10px
+    font-weight: bold
+
+  .nav > li > a
+    font-weight: bold
+
+  .nav > .active > a, .nav > .active > a:hover
+    opacity: 1
+    color: #fff
+
+  .brand:hover
+
+footer.well
+  font-family: $monoFontFamily
+  color: #737373
+  text-align: center
+  margin: 10px 0 0 0
+  a
+    color: #3B5998
+
+@import "bootstrap-responsive"
+@import "searches"
+@import "images"
+
+.container
+  max-width: 767px
+
+@media (max-width: 767px)
+  .navbar-fixed-top
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+
+    margin-left: 0
+    margin-right: 0
+
+  footer.well
+    margin-left: -20px
+    margin-right: -20px
+
+@media (max-width: 979px)
+  .navbar
+    &.navbar-fixed-top
+      position: fixed
+      top: 0
+      left: 0
+      right: 0
+
+    .container
+      max-width: 724px
+
+  body
+    padding-top: 65px
+    font-size: 14px
