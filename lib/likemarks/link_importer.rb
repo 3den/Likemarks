@@ -6,6 +6,8 @@ module Likemarks
       user.fb_links(limit).each do |data|
         new(user, data).save
       end
+    rescue => e
+      Rails.logger.info "Links could not be imported for #{user.name}"
     end
 
     def initialize(user, data)
