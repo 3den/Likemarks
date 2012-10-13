@@ -6,10 +6,22 @@ class Likemarks.Collections.Links extends Backbone.Collection
     @fetch({data: @options})
     this
 
-  scroll: ->
+  scroll: (options) ->
+    return this if @done?
+
+    options.start()
+    callback = (collection, response) ->
+      Likemarks.links.done = true if response.length < 10
+      options.finish()
+
     @options.page ||= 0
+    @options.limit = 10
     @options.page++
-    @fetch({data: @options, add: true})
+    @fetch
+      data: @options
+      add: true
+      success: callback
+      error: callback
     this
 
 Likemarks.links = new Likemarks.Collections.Links()

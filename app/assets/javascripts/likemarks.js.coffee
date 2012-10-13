@@ -25,4 +25,9 @@ $ ->
     height = $(document).height() - 5
     distance = $(document).scrollTop() + $(window).height()
     if height <= distance
-      Likemarks.links.scroll()
+      Likemarks.links.scroll
+        start: ->
+          $("#loading").show()
+        finish: ->
+          $("#loading").hide()
+
